@@ -4,8 +4,7 @@
   "description": "Log generation application",
   "main": "index.js",
   "scripts": {
-    "get-version:linux": "echo $npm_package_version",
-    "get-version:windows": "echo %npm_package_version%",
+    "docker:build:linux": "docker build -t log-testing:$npm_package_version .",
     "docker:build:windows": "docker build -t log-testing:%npm_package_version% .",
     "start": "node index.js",
     "test": "docker run log-testing:0.0.1"
