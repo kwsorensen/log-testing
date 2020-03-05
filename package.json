@@ -1,0 +1,27 @@
+{
+  "name": "log-testing",
+  "version": "0.0.1",
+  "description": "Log generation application",
+  "main": "index.js",
+  "scripts": {
+    "get-version:linux": "echo $npm_package_version",
+    "get-version:windows": "echo %npm_package_version%",
+    "docker:build:windows": "docker build -t log-testing:%npm_package_version% .",
+    "start": "node index.js",
+    "test": "docker run log-testing:0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwsorensen/log-testing.git"
+  },
+  "keywords": [
+    "logging",
+    "log testing"
+  ],
+  "author": "Kyle Sorensen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kwsorensen/log-testing/issues"
+  },
+  "homepage": "https://github.com/kwsorensen/log-testing#readme"
+}
