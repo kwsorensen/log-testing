@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-testing
+  namespace: default
+  labels:
+    app: log-testing
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: log-testing
+  template:
+    metadata:
+      labels:
+        app: log-testing
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              topologyKey: kubernetes.io/hostname
+      containers:
+      - name: log-testing
+        image: keylowgee/log-testing:latest
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "250Mi"
+            cpu: "500m"

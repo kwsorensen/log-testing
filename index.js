@@ -14,7 +14,7 @@ LOOP_COUNT =  Number( process.env.LOOP_COUNT || "100")
 DELAY_MS = Number(process.env.DELAY_MS || "250")
 
 for (i=0; i<LOOP_COUNT; i++) {
-    console.log(`LOG_BASE_NAME ${i}`)
+    console.log(`${LOG_BASE_NAME} ${i}`)
     sleep(DELAY_MS)
 }
 

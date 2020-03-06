@@ -3,5 +3,7 @@ WORKDIR /home/node
 
 ADD ./index.js .
 ADD ./package.json .
+ADD ./run.sh .
+RUN chmod 777 ./run.sh
 
-CMD ["/usr/local/bin/node","/home/node/index.js"]
+CMD ["/bin/sh","./run.sh"]
